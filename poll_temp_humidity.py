@@ -1,11 +1,14 @@
 import Adafruit_DHT
 import boto3
+import socket
 import time
 
 sensor = Adafruit_DHT.AM2302
 # RaspberryPi pinout:
 # https://pinout.xyz/pinout/pin18_gpio24
-pin = 18
+pin = 24
+
+hostname = socket.gethostname()
 
 cloudwatch = boto3.client('cloudwatch')
 
@@ -19,7 +22,7 @@ while True:
 
     temp_f = temp_c * 9/5.0 + 32
 
-    print("%sºF, %s%", temp_f, humidity_pct)
+    print("%s: %sºF, %s%" % hostname, temp_f, humidity_pct)
 
     cloudwatch.put_metric_data(
         MetricData=[
@@ -35,7 +38,7 @@ while True:
                 'Value': temp_f
             },
         ],
-        Namespace='HOME/STATS'
+        Namespace='HOME/%s' % hostname
     )
 
     time.sleep(15)
