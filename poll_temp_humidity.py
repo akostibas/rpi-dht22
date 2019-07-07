@@ -22,7 +22,7 @@ while True:
 
     temp_f = temp_c * 9/5.0 + 32
 
-    print("%s: %sºF, %s%%" % (hostname, temp_f, humidity_pct))
+    print("%s: %0.2fºF, %0.2f%%" % (hostname, temp_f, humidity_pct))
 
     cloudwatch.put_metric_data(
         MetricData=[
