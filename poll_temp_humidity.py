@@ -30,7 +30,7 @@ while True:
                 'MetricName': 'Temperature',
                 'Dimensions': [
                     {
-                        'Name': 'Atmosphere',
+                        'Name': hostname,
                         'Value': 'Fahrenheit'
                     },
                 ],
@@ -41,7 +41,7 @@ while True:
                 'MetricName': 'Humidity',
                 'Dimensions': [
                     {
-                        'Name': 'Atmosphere',
+                        'Name': hostname,
                         'Value': '% Humidity'
                     },
                 ],
@@ -49,7 +49,7 @@ while True:
                 'Value': humidity_pct
             },
         ],
-        Namespace='HOME/%s' % hostname
+        Namespace='Home/Atmosphere'
     )
 
     time.sleep(15)
