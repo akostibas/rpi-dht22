@@ -37,6 +37,17 @@ while True:
                 'Unit': 'None',
                 'Value': temp_f
             },
+            {
+                'MetricName': 'Humidity',
+                'Dimensions': [
+                    {
+                        'Name': 'Unit',
+                        'Value': '% Humidity'
+                    },
+                ],
+                'Unit': 'None',
+                'Value': humidity_pct
+            },
         ],
         Namespace='HOME/%s' % hostname
     )
