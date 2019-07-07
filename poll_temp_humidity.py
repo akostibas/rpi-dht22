@@ -30,8 +30,8 @@ while True:
                 'MetricName': 'Temperature',
                 'Dimensions': [
                     {
-                        'Name': hostname,
-                        'Value': 'Fahrenheit'
+                        'Name': 'Temperature',
+                        'Value': hostname
                     },
                 ],
                 'Unit': 'None',
@@ -41,8 +41,8 @@ while True:
                 'MetricName': 'Humidity',
                 'Dimensions': [
                     {
-                        'Name': hostname,
-                        'Value': '% Humidity'
+                        'Name': 'Humidity',
+                        'Value': hostname
                     },
                 ],
                 'Unit': 'None',
